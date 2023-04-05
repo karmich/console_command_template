@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+function help()
+{
+    echo "hello: Prints Hello on the screen"
+    echo "-h | --help: Prints this help"
+}
+
+function hello()
+{
+  echo 'Hello world!'
+}
+
+function main()
+{
+    ARG=$1
+
+    case $ARG in
+
+        hello )
+            hello
+        ;;
+
+        --help | -h )
+            help
+        ;;
+
+        * )
+            help
+        ;;
+
+    esac
+}
+
+main $@
+exit 0
