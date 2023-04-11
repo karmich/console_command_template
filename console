@@ -2,8 +2,8 @@
 
 function help()
 {
-    echo "hello: Prints Hello on the screen"
-    echo "-h | --help: Prints this help"
+    echo 'Hello: Prints Hello on the screen'
+    echo '-h | --help: Prints this help'
 }
 
 function hello()
