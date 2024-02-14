@@ -1,36 +1,42 @@
 #!/usr/bin/env bash
 
-function help()
+help()
 {
-    echo 'Hello: Prints Hello on the screen'
-    echo '-h | --help: Prints this help'
+  cat << HELP
+Usage: console [OPTIONS] ARGS
+  Options:
+    -h | --help: Prints this help
+
+  Args:
+    hello: Prints Hello on the screen
+HELP
 }
 
-function hello()
+hello()
 {
   echo 'Hello world!'
 }
 
-function main()
+main()
 {
-    ARG=$1
+  ARG="$1"
 
-    case $ARG in
+  case "$ARG" in
 
-        hello )
-            hello
-        ;;
+    hello )
+      hello
+    ;;
 
-        --help | -h )
-            help
-        ;;
+    --help | -h )
+      help
+    ;;
 
-        * )
-            help
-        ;;
+    * )
+      help
+    ;;
 
-    esac
+  esac
 }
 
-main $@
+main "$@"
 exit 0
